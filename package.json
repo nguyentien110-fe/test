@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "less": "^4.1.2"
+  },
+  "dependencies": {
+    "owl.carousel": "^2.3.4",
+    "swiper": "^8.1.4"
+  }
+}

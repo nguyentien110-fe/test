@@ -1,0 +1,143 @@
+@import "../variable/color.less";
+@import "../mixin/mixin.less";
+@import "../variable/typography.less";
+@import "../base/form.less";
+
+header {
+    .boxShadow(0, 4px, 10px, 0, @color-shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: @color-theme;
+    z-index: 6;
+}
+
+.header__inner {
+    .flexbox;
+    justify-content: center;
+    border-top: 1px solid @color-border;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        background-color: @color-yellow;
+        width: 100%;
+        height: 9px;
+        z-index: 2;
+        border-top: 3px solid @color-white;
+        border-bottom: 1px solid @color-white;
+    }
+}
+
+.header__logo {
+    a {
+        display: block;
+        padding: 14px;
+    }
+    a:nth-child(2) {
+        position: absolute;
+        left: 19.1%;
+        bottom: -21.4%;
+        z-index: 6;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-color: @color-white;
+        z-index: 5;
+    }
+}
+
+.header__box {
+    .flexbox;
+    justify-content: center;
+    background-color: @color-white;
+    padding: 4.5px 25px;
+    z-index: 4;
+}
+
+.header__menu {
+    ul {
+        .flexbox;
+        a {
+            .flexbox;
+            flex-direction: column;
+            padding: 10px 10px;
+            font-weight: @font-weight__medium;
+            font-size: @font-size__xs;
+        }
+    }
+}
+
+.menu-title {
+    margin-top: 6px;
+    font-size: @font-size__xs;
+    color: @color-primary;
+}
+
+.header__right {
+    .flexbox;
+    justify-content: center;
+}
+
+.header__form {
+    margin: 0 10px 0 50px;
+    form {
+        .flexbox;
+        justify-content: space-between;
+        input {
+            .input(10px, 40px, 10px, 20px);
+        }
+        button {
+            .background-image (40px, 40px, @color-theme);
+            border: none;
+            outline: none;
+            margin-left: 20px;
+        }
+    }
+}
+
+.header__options {
+    position: relative;
+    ul {
+        .flexbox;
+        li {
+            p {
+                font-size: 0;
+            }
+            a {
+                .flexbox;
+                justify-content: center;
+                margin: 0 10px
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 78%;
+                width: 1px;
+                height: 100%;
+                background: @color-gray-03;
+            }
+        }
+    }
+}
+
+.header__language {
+    li {
+        a {
+            font-size: @font-size__xs;
+            font-weight: @font-weight__medium;
+            color: @color-primary;
+        }
+        a.active {
+            color: @color-theme;
+        }
+    }
+}
+
